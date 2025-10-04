@@ -8,6 +8,7 @@ Fechas/Horario:
 - Horario 9:00 – 15:00 hs
 
 Instructor: Alejandro Cerezo Lasne <alce65@hotmail.es>
+
 Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 
 <!-- ## Día 1 (L-15): Introducción a Typescript y Angular
@@ -94,7 +95,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Uso de promesas y observables (RxJs)
   - Testing de servicios.
   - Uso en los componentes. Inyección de dependencias.
-  - Repositorio y lógica de negocio (estado). 
+  - Repositorio y lógica de negocio (estado).
 - Formularios reactivos (DD)
   - FormGroup, FormControl, FormBuilder
   - Validaciones síncronas y asíncronas.
@@ -103,7 +104,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 <!--  ## Día 5 (V-30). Servicios HTTP
 
   - Repositorio y lógica de negocio (estado). Estrategias
-  - Estrategia no optimista 1 repositorio / 2 estado 
+  - Estrategia no optimista 1 repositorio / 2 estado
 - Formularios reactivos (review). Mensajes de validación
 - Introducción a los servicios HTTP en Angular.ç
 - Servicio fake basado en JSONServer.
@@ -117,5 +118,5 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Clonado de ToDo como ToDo-Flux
   - Uso del estado desde los componentes ToDo...
   - Uso desde cualquier parte de la aplicación.
-  - Signals y estado 
+  - Signals y estado
 -->
