@@ -3,6 +3,89 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "demo1": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true
+        }
+      },
+      "root": "projects/demo1",
+      "sourceRoot": "projects/demo1/src",
+      "prefix": "ind",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/demo1/src/main.ts",
+            "tsConfig": "projects/demo1/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo1/public"
+              }
+            ],
+            "styles": [
+              "projects/demo1/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "demo1:build:production"
+            },
+            "development": {
+              "buildTarget": "demo1:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/demo1/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo1/public"
+              }
+            ],
+            "styles": [
+              "projects/demo1/src/styles.css"
+            ]
+          }
+        }
+      }
+    }
   },
   "cli": {
     "analytics": false

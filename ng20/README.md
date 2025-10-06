@@ -2,6 +2,14 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
 
+Workspace creado inicialmente sin projects
+
+To create a new Angular application within this workspace, use the following command:
+
+```bash
+ng g app demo1 -s -t --style css --ssr false -p ind --zoneless true
+```
+
 ## Development server
 
 To start a local development server, run:
