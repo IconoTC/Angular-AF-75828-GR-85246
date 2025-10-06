@@ -38,7 +38,7 @@ class Student extends Person {
     console.log(`${this.name} is studying.`);
   }
 
-  greet() {
+  override greet() {
     super.greet();
     console.log(`I am also a student with ID: ${this.studentId}`);
   }

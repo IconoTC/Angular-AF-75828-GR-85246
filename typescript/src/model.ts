@@ -23,8 +23,23 @@ const user2: User = {
   name: "Jane Smith",
   email: "jane.smith@example.com",
   isActive: false,
-  lastLogin: new Date()
+  lastLogin: new Date(),
+};
+
+
+// Forma más estándar de definir clases
+class UserAccountStandard {
+  user: User;
+  accountType: string;
+  createdAt: Date;
+  constructor(user: User, accountType: string, createdAt: Date = new Date()) {
+    this.user = user;
+    this.accountType = accountType;
+    this.createdAt = createdAt;
+  }
 }
+
+// Forma más concisa de definir clases con propiedades paramétricas
 
 class UserAccount {
   constructor(
@@ -40,20 +55,20 @@ const promise = new Promise<User[]>((resolve, reject) => {
   setTimeout(() => {
     const n = Math.random();
     if (n > 0.5) {
-        reject("Error: La promesa ha fallado");
-        return;
+      reject("Error: La promesa ha fallado");
+      return;
     }
     resolve([user2]);
-  }, 500); 
+  }, 500);
 });
 
 promise
-  .then(users => {
-    users.forEach(user => {
+  .then((users) => {
+    users.forEach((user) => {
       console.log(`Usuario: ${user.name}, Email: ${user.email}`);
     });
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(error);
   })
   .finally(() => {
