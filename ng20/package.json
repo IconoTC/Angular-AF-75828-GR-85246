@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --browsers=ChromeHeadless --no-watch --code-coverage",
+    "test:c": "ng test --code-coverage --browsers=ChromeHeadless",
     "lint": "ng lint"
   },
   "prettier": {
@@ -45,6 +46,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "karma-mocha-reporter": "^2.2.5",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.40.0"
   }

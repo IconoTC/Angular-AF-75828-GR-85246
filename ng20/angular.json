@@ -81,7 +81,8 @@
             ],
             "styles": [
               "projects/demo1/src/styles.css"
-            ]
+            ],
+            "karmaConfig": "projects/demo1/karma.conf.js"
           }
         },
         "lint": {
