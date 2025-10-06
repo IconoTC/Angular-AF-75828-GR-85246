@@ -11,10 +11,11 @@ Instructor: Alejandro Cerezo Lasne <alce65@hotmail.es>
 
 Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 
-<!-- ## Día 1 (L-15): Introducción a Typescript y Angular
+## Día 1 (L-15): Introducción a Typescript y Angular
 
 - Introducción a Angular y su ecosistema.
 - Elementos básicos de TypeScript.
+
   - Tipos de datos. Inferencia y anotación de tipos.
   - Tipado de funciones.
   - Tipos personalizados. Interfaces y tipos.
@@ -23,6 +24,10 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
     - Getters y Setters.
     - Herencia.
     - Clases abstractas.
+  - Promesas y genéricos
+
+- [Descanso]
+
 - Instalación de Angular CLI.
 - Creación de un nuevo workspace Angular sin proyecto. `ng new`
 - Creación de un nuevo proyecto (app) Angular. `ng generate app`
@@ -32,8 +37,10 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Servidor de desarrollo: `ng serve`.
   - Testing con Karma y Jasmine: `ng test`.
   - Construcción del proyecto: `ng build`.
-- Generación de componentes: `ng generate`.
-  - Elementos de un componente: HTML, CSS, TypeScript. -->
+- Reconfiguración del testing con Jasmine sin karma
+- Generación de componentes: `ng generate component <nombre>`.
+  - Elementos de un componente: HTML, CSS, TypeScript.
+  - Template y estilos inline o en ficheros.
 
 <!-- ## Día 2 (M-16): Componentes y Rutas
 
