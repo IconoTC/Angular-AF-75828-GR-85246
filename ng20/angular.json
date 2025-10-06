@@ -83,11 +83,24 @@
               "projects/demo1/src/styles.css"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo1/**/*.ts",
+              "projects/demo1/**/*.html"
+            ],
+            "eslintConfig": "projects/demo1/eslint.config.js"
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
