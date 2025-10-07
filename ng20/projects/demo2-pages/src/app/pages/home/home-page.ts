@@ -5,9 +5,8 @@ import { Counter } from "./components/counter/counter";
   selector: 'ind-home-page',
   imports: [Counter],
   template: `
-    <p>
-      home-page works!
-    </p>
+    <h2>Home Page</h2>
+
     <ind-counter />
   `,
   styles: ``

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ind-about-page',
   imports: [],
   template: `
+    <h2>About Page</h2>
     <p>
       about-page works!
     </p>
