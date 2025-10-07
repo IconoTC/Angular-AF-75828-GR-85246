@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Counter } from './counter';
 import { provideZonelessChangeDetection } from '@angular/core';
 
@@ -33,13 +32,16 @@ describe('Counter', () => {
   it('should increment and decrement the counter', () => {
     const element = fixture.nativeElement as HTMLElement;
     const buttons = element.querySelectorAll('button');
+    expect(buttons.length).toBe(2);
     const span = element.querySelector('span');
     expect(span?.textContent).toBe('0');
 
     buttons[1].click();
+    fixture.detectChanges();
     expect(span?.textContent).toBe('1');
 
     buttons[0].dispatchEvent(new Event('click'));
+    fixture.detectChanges();
     expect(span?.textContent).toBe('0');
   });
 });
