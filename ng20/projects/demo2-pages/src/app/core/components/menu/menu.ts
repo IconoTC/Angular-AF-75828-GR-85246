@@ -9,39 +9,37 @@ import { MenuOption } from '../../types/menu-option';
   template: `
     <nav>
       <ul>
-
-    @for (option of options; track option.route) {
-      <li><a [routerLink]=" option.route " routerLinkActive="active" >{{ option.label }}</a></li>
-    }
-
+        @for (option of options; track option.route) {
+          <li>
+            <a [routerLink]="option.route" routerLinkActive="active">{{ option.label }}</a>
+          </li>
+        }
       </ul>
+    </nav>
   `,
   styles: `
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
+    nav {
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        display: inline;
+        margin-right: 15px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
 
-  nav li {
-    display: inline;
-    margin-right: 15px;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-
-  .active {
-    font-weight: bold;
-    text-decoration: underline;
-    color: blue;
-  }
-  `
+    .active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: blue;
+    }
+  `,
 })
 export class Menu {
-
   options: MenuOption[] = menuOptions;
-
 }
