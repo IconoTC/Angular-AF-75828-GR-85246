@@ -35,6 +35,12 @@
     },
     {
       "path": "./projects/demo0-zone/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/demo2-pages/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/demo2-pages/tsconfig.spec.json"
     }
   ]
 }

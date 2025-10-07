@@ -196,6 +196,100 @@
           }
         }
       }
+    },
+    "demo2-pages": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true
+        }
+      },
+      "root": "projects/demo2-pages",
+      "sourceRoot": "projects/demo2-pages/src",
+      "prefix": "ind",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/demo2-pages/src/main.ts",
+            "tsConfig": "projects/demo2-pages/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo2-pages/public"
+              }
+            ],
+            "styles": [
+              "projects/demo2-pages/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "demo2-pages:build:production"
+            },
+            "development": {
+              "buildTarget": "demo2-pages:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/demo2-pages/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo2-pages/public"
+              }
+            ],
+            "styles": [
+              "projects/demo2-pages/src/styles.css"
+            ],
+            "karmaConfig": "projects/demo2-pages/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo2-pages/**/*.ts",
+              "projects/demo2-pages/**/*.html"
+            ],
+            "eslintConfig": "projects/demo2-pages/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {
