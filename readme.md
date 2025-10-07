@@ -21,26 +21,28 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Tipos personalizados. Interfaces y tipos.
   - Clases ES6 en TypeScript.
     - Modificadores de acceso.
-    - Getters y Setters.
+    - Getters y Setters de ES.
     - Herencia.
     - Clases abstractas.
   - Promesas y genéricos
 
 - [Descanso]
 
+- Requisitos: Node.js y npm. Editor VSCode. Extensiones recomendadas.
 - Instalación de Angular CLI.
 - Creación de un nuevo workspace Angular sin proyecto. `ng new`
 - Creación de un nuevo proyecto (app) Angular. `ng generate app`
 - Estructura de un workspace/proyecto Angular.
-- Añadiendo ESLint y Prettier.
+- Añadiendo ESLint (`ng add`) y Prettier.
 - Angular CLI: Comandos básicos.
   - Servidor de desarrollo: `ng serve`.
   - Testing con Karma y Jasmine: `ng test`.
   - Construcción del proyecto: `ng build`.
-- Reconfiguración del testing con Jasmine sin karma
+- Reconfiguración del testing con Jasmine sin karma (`ng g config karma`)
 - Generación de componentes: `ng generate component <nombre>`.
   - Elementos de un componente: HTML, CSS, TypeScript.
   - Template y estilos inline o en ficheros.
+- Guía de estilos actualizada
 
 <!-- ## Día 2 (M-16): Componentes y Rutas
 
