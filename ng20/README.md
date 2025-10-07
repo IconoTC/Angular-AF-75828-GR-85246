@@ -8,6 +8,7 @@ To create a new Angular application within this workspace, use the following com
 
 ```bash
 ng g app demo1 -s -t --style css --ssr false -p ind --zoneless true
+ng g app demo0-zone -s -t --style css --ssr false -p ind --zoneless false
 ```
 
 ## Development server

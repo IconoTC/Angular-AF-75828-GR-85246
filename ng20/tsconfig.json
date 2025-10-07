@@ -29,6 +29,12 @@
     },
     {
       "path": "./projects/demo1/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/demo0-zone/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/demo0-zone/tsconfig.spec.json"
     }
   ]
 }
