@@ -39,12 +39,14 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Testing con Karma y Jasmine: `ng test`.
   - Construcción del proyecto: `ng build`.
 - Reconfiguración del testing con Jasmine sin karma (`ng g config karma`)
+  - Configuración de Karma y Jasmine.
+  - Coverage istambul
 - Generación de componentes: `ng generate component <nombre>`.
   - Elementos de un componente: HTML, CSS, TypeScript.
   - Template y estilos inline o en ficheros.
 - Guía de estilos actualizada
 
-<!-- ## Día 2 (M-16): Componentes y Rutas
+## Día 2 (M-16): Componentes y Rutas
 
 - Componentes: estado. Zone v. Zoneless
 - Estado en los componentes con ZoneJS.
@@ -61,6 +63,15 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Navegación. Componente menu. @for
   - SPA: RouterLink y RouterLinkActive
 - Rutas Lazy. Default import en las páginas
+
+- [Descanso]
+
+- Testing de componentes. Pruebas unitarias
+
+  - Elementos de los test en Angular: TestBed, fixture, detectChanges()
+  - Test de implementación v. test de comportamiento.
+  - Tests para componentes básicos.
+
 - Componentes.
   - Componente Counter. Condicionales @If. [class]
   - Componente Greeting. Input de usuario: data binding. [(ngModel)]
@@ -68,10 +79,9 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
     - Componente Header.
     - Componente Footer.
 - Pipes. Location "es"
-- Testing de componentes
-  - Configuración de Karma y Jasmine.
-  - Coverage istambul
-  - Creación de pruebas unitarias para componentes. -->
+
+- Testing de componentes (2)
+  - Ajustar entorno en tests para componentes.
 
 <!-- ## Día 3 (X-17). Comunicaciones y Arquitectura de componentes. Formularios TD
 
