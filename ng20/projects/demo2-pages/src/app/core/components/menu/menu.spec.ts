@@ -26,4 +26,12 @@ describe('Menu', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have correct routes rendered', () => {
+    const element = fixture.nativeElement as HTMLElement;
+    const links = element.querySelectorAll('a');
+    expect(links.length).toBe(3);
+    expect(links[0].textContent).toBe('Inicio');
+    expect(links[2].textContent).toBe('Acerca de');
+  });
 });
