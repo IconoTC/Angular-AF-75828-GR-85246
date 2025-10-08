@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, input  } from '@angular/core';
 
 @Component({
   selector: 'ind-header',
   imports: [],
   template: `
     <header>
-      <h1>{{ title() }}</h1>
+      <h1>{{ appTitle() }}</h1>
       <p>Demo Angular 20 Zoneless con rutas</p>
       <p>Curso de Angular para Indra</p>
       <ng-content></ng-content>
@@ -14,5 +14,9 @@ import { Component, signal } from '@angular/core';
   styles: ``
 })
 export class Header {
-protected readonly title = signal('Demo2 - Pages');
+  // Versiones anteriores de Angular
+  // @Input({
+  //   required: true
+  // }) appTitle!: WritableSignal<string>;
+  appTitle = input.required<string>();
 }

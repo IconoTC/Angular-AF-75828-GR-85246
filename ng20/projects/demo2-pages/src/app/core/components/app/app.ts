@@ -6,7 +6,7 @@ import { Layout } from "../layout/layout";
   selector: 'ind-root',
   imports: [RouterOutlet, Layout],
   template: `
-  <ind-layout>
+  <ind-layout [appTitle]="title()">
     <router-outlet />
   </ind-layout>
   `,

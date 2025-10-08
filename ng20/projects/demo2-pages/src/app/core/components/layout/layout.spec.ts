@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Layout } from './layout';
-import { provideZonelessChangeDetection } from '@angular/core';
+import { InputSignal, provideZonelessChangeDetection, signal } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 describe('Layout', () => {
@@ -16,6 +16,7 @@ describe('Layout', () => {
 
     fixture = TestBed.createComponent(Layout);
     component = fixture.componentInstance;
+    component.appTitle = signal('') as unknown as InputSignal<string>;
     fixture.detectChanges();
   });
 

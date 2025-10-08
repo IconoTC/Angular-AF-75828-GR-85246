@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { menuOptions } from '../../../app.routes';
 import { MenuOption } from '../../types/menu-option';
 
 @Component({
@@ -9,7 +8,7 @@ import { MenuOption } from '../../types/menu-option';
   template: `
     <nav>
       <ul>
-        @for (option of options; track option.route) {
+        @for (option of options(); track option.route) {
           <li>
             <a [routerLink]="option.route" routerLinkActive="active">{{ option.label }}</a>
           </li>
@@ -41,5 +40,5 @@ import { MenuOption } from '../../types/menu-option';
   `,
 })
 export class Menu {
-  options: MenuOption[] = menuOptions;
+  options = input.required<MenuOption[]>();
 }
