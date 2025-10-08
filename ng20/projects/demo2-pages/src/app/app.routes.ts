@@ -8,6 +8,12 @@ export const routes: Routes = [
     title: 'Home | Demo2 Pages',
     data: {label: 'Inicio'}
    },
+
+  { path: 'notes',
+    loadComponent: () => import('./pages/notes/notes-page'),
+    title: 'Notes | Demo2 Pages',
+    data: {label: 'Notas'}
+   },
   { path: 'tasks',
     loadComponent: () => import('./pages/tasks/tasks-page'),
     title: 'Tasks | Demo2 Pages',
