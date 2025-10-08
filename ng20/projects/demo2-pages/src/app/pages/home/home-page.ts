@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Counter } from "./components/counter/counter";
 import { Greetings } from "./components/greetings/greetings";
 import { CountersWrapper } from "./components/counters-wrapper/counters-wrapper";
 
 @Component({
   selector: 'ind-home-page',
-  imports: [Counter, Greetings, CountersWrapper],
+  imports: [Greetings, CountersWrapper],
   template: `
     <h2>Home Page</h2>
     <ind-counters-wrapper />
