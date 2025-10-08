@@ -11,7 +11,7 @@ Instructor: Alejandro Cerezo Lasne <alce65@hotmail.es>
 
 Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 
-## Día 1 (L-15): Introducción a Typescript y Angular
+## Día 1 (L-6): Introducción a Typescript y Angular
 
 - Introducción a Angular y su ecosistema.
 - Elementos básicos de TypeScript.
@@ -46,7 +46,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Template y estilos inline o en ficheros.
 - Guía de estilos actualizada
 
-## Día 2 (M-16): Componentes y Rutas
+## Día 2 (M-7): Componentes y Rutas
 
 - Componentes: estado. Zone v. Zoneless
 - Estado en los componentes con ZoneJS.
@@ -83,7 +83,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 - Testing de componentes (2)
   - Ajustar entorno en tests para componentes.
 
-<!-- ## Día 3 (X-17). Comunicaciones y Arquitectura de componentes. Formularios TD
+## Día 3 (X-8). Comunicaciones y Arquitectura de componentes. Formularios TD
 
 - Testing de componentes (continuación)
   - Pruebas unitarias para componentes con eventos y data binding.
@@ -94,6 +94,11 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Agrupando contadores.
   - Contadores. Eventos con valor
   - Testing de componentes con comunicación.
+
+- [Descanso]
+
+<!-- 
+
 - Arquitectura de componentes
   - Componentes de presentación vs contenedores.
   - Componentes inteligentes vs tontos.
@@ -101,9 +106,11 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Entidad ToDo. Modelo y mock de datos.
   - Componente Tasks. Lógica del estado
   - Componente TodoItem. Input y Output (Eventos)
-  - Componente TodoCreate. Output (Eventos). Forms Template Driven (TD) -->
+  - Componente TodoCreate. Output (Eventos). Forms Template Driven (TD) 
 
-<!-- ## Día 4 (J-18). Servicios. Providers e injectors. Formularios DD
+-->
+
+<!-- ## Día 4 (J-9). Servicios. Providers e injectors. Formularios DD
 
 - Forms TD (review)
 - Introducción a los servicios en Angular.
@@ -120,7 +127,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Validaciones síncronas y asíncronas.
   - Testing de formularios reactivos. -->
 
-<!--  ## Día 5 (V-30). Servicios HTTP
+<!--  ## Día 5 (V-10). Servicios HTTP
 
   - Repositorio y lógica de negocio (estado). Estrategias
   - Estrategia no optimista 1 repositorio / 2 estado
