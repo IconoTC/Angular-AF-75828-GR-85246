@@ -12,6 +12,10 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    { provide: LOCALE_ID, useValue: 'es' }
+    { provide: LOCALE_ID, useValue: 'es' },
+    // {provide: DateService, useFactory: () => new DateService('dd/MM/yyyy') }
+    // {provide: DateService, useExisting: DateService }
+    // { provide: DateService, useClass: DateService }
+    // DateService = provideIn: root en el servicio
   ]
 };

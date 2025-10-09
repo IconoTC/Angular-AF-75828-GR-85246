@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DateService } from '../../../../core/services/date-service';
 
 @Component({
   selector: 'ind-greetings',
@@ -14,6 +15,8 @@ import { FormsModule } from '@angular/forms';
     <input type="text" placeholder="Tu nombre" [(ngModel)]="name" />
     <p>Hola {{ name() ? name() : 'amigo' }}!</p>
     <button (click)="handleClear()">Borrar</button>
+
+    <p>Hoy es {{ dateService.getDate().getTime()  }}</p>
   `,
   styles: `
     :host {
@@ -32,6 +35,14 @@ import { FormsModule } from '@angular/forms';
   `,
 })
 export class Greetings {
+
+  dateService = inject(DateService);
+
+
+  // constructor (public dateService: DateService) {
+
+  // }
+
   protected name = signal('');
 
   protected handleClear() {

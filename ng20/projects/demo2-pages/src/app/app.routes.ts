@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MenuOption } from './core/types/menu-option';
+import { DateService } from './core/services/date-service';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,8 @@ export const routes: Routes = [
   { path: 'tasks',
     loadComponent: () => import('./pages/tasks/tasks-page'),
     title: 'Tasks | Demo2 Pages',
-    data: {label: 'Tareas'}
+    data: {label: 'Tareas'},
+    providers: [DateService]
    },
   { path: 'about',
     loadComponent: () => import('./pages/about/about-page'),

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DateService } from '../../core/services/date-service';
 
 @Component({
   selector: 'ind-tasks-page',
@@ -8,10 +9,12 @@ import { Component } from '@angular/core';
     <p>
       tasks-page works!
     </p>
+    <p>Hoy es {{ dateService.getDate().getTime() }}</p>
   `,
   styles: ``
 })
 export class TasksPage {
+  dateService = inject(DateService);
 
 }
 
