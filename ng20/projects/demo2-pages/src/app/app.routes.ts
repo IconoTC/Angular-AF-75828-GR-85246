@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { MenuOption } from './core/types/menu-option';
 import { DateService } from './core/services/date-service';
+import { CoursesInMemoryRepo } from './pages/courses/service/courses-in-memory-repo';
+import { CoursesLocalRepo } from './pages/courses/service/courses-local-repo';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +24,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/courses/courses-page'),
     title: 'Courses | Demo2 Pages',
     data: { label: 'Cursos' },
+    providers: [{ provide: CoursesInMemoryRepo, useClass: CoursesLocalRepo }],
   },
   {
     path: 'tasks',

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { Contact } from "./components/contact/contact";
 
 @Component({
   selector: 'ind-about-page',
-  imports: [],
+  imports: [Contact],
   template: `
     <h2>About Page</h2>
-    <p>
-      about-page works!
-    </p>
+    <ind-contact />
   `,
   styles: ``
 })
