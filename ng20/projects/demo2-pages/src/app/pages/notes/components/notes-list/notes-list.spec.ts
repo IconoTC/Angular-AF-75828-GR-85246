@@ -18,6 +18,7 @@ describe('NotesList', () => {
 
     fixture = TestBed.createComponent(NotesList);
     component = fixture.componentInstance;
+    await fixture.whenStable();
     fixture.detectChanges();
   });
 
@@ -25,15 +26,12 @@ describe('NotesList', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should display a list of notes', async () => {
+  it('should display a list of notes', async () => {
     const element = fixture.nativeElement as HTMLElement;
-    //const notes = component.notes();
-    fixture.whenStable().then(() => {
-      expect(element.querySelectorAll('ind-courses-card').length).toBe(2);
-    });
+    expect(element.querySelectorAll('ind-notes-card').length).toBe(2);
   });
 
-  xit('should add a note when the listener is triggered', async () => {
+  it('should add a note when the listener is triggered', async () => {
     const element = fixture.nativeElement as HTMLElement;
     const newNote: NoteDTO = {
       title: 'Nota 3',
@@ -47,12 +45,12 @@ describe('NotesList', () => {
     const addFormDebug = elementDebug.query(By.directive(NotesForm));
     addFormDebug.triggerEventHandler('eventAdd', newNote);
     fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(component.notes().length).toBe(3);
-      expect(element.querySelectorAll('ind-courses-card').length).toBe(3);
-      expect(component.notes()[2].author).toEqual(newNote.author);
-      expect(component.notes()[2].title).toEqual(newNote.title);
-      expect(component.notes()[2].isImportant).toEqual(newNote.isImportant);
-    });
+    // A nivel de funcionalidad
+    expect(element.querySelectorAll('ind-notes-card').length).toBe(3);
+    // A nivel de implementacion
+    expect(component.notes().length).toBe(3);
+    expect(component.notes()[2].author).toEqual(newNote.author);
+    expect(component.notes()[2].title).toEqual(newNote.title);
+    expect(component.notes()[2].isImportant).toEqual(newNote.isImportant);
   });
 });

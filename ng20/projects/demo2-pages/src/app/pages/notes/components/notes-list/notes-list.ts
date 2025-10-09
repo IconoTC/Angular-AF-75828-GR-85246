@@ -39,6 +39,7 @@ export class NotesList implements OnInit {
 
   ngOnInit() {
     getNotesAsync().then((notes) => {
+      console.log('Notes loaded', notes);
       this.notes.set(notes);
 
     });
