@@ -36,7 +36,7 @@ describe('CoursesInMemoryRepo', () => {
   });
 
   it('should not get course by invalid id', async () => {
-   expectAsync(service.getById(999)).toBeRejectedWithError('Course with id 999 not found.');
+   await expectAsync(service.getById(999)).toBeRejectedWithError('Course with id 999 not found.');
   });
 
   it('should add a new course', async () => {
@@ -61,7 +61,7 @@ describe('CoursesInMemoryRepo', () => {
     const mockCourse: CourseDTO = {
       title: 'Updated Course',
     } as CourseDTO;
-    expectAsync(service.update(999, mockCourse)).toBeRejectedWithError('Course with id 999 not found.');
+    await expectAsync(service.update(999, mockCourse)).toBeRejectedWithError('Course with id 999 not found.');
   });
 
   it('should delete a course', async () => {
@@ -72,6 +72,6 @@ describe('CoursesInMemoryRepo', () => {
   });
 
   it('should not delete a course with invalid id', async () => {
-    expectAsync(service.delete(999)).toBeRejectedWithError('Course with id 999 not found.');
+    await expectAsync(service.delete(999)).toBeRejectedWithError('Course with id 999 not found.');
   });
 });
