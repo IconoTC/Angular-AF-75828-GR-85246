@@ -89,6 +89,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Pruebas unitarias para componentes con eventos y data binding.
 - Debugging
 - Comunicación entre componentes
+
   - Input. Decoradores @Input. función input(). Drilling del título
   - Output. Decorador @Output. EventEmitter. Función output(). Eventos del contador
   - Agrupando contadores.
@@ -110,28 +111,42 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
     - viewChild(NgForm) y form.reset()
     - viewChild(Form), ElementRef.nativeElement y acceso al DOM
 
-<!-- ## Día 4 (J-9). Servicios. Providers e injectors. Formularios DD
+## Día 4 (J-9). Servicios. Providers e injectors. Formularios DD
 
 - Tests de Forms TD
 - Introducción a los servicios en Angular.
 - Servicios y Providers. DI (Dependency Injection)
+
   - Provider root v. provider en un componente
+  - Ejemplo con un servicio simple: DateService
+  - Injector jerárquico. Servicios singleton y no singleton.
+
 - Servicios y patrón Repository
+
   - Servicio InMemoryTaskRepository. Mock de datos.
-  - Uso de promesas y observables (RxJs)
-  - Testing de servicios.
   - Uso en los componentes. Inyección de dependencias.
-  - Repositorio y lógica de negocio (estado).
+  - Métodos CRUD. getAll() y getById()
+
+- [Descanso]
+
+- Servicios y patrón Repository (continuación)
+
+  - Métodos CRUD. add(), update(), delete()
+  - Uso de promesas
+  - Repositorio y lógica de negocio (estado).Estrategias
+  - Repositorio y persistencia local (localStorage).
+  - Testing de servicios.
+    - Tests del servicio
+    - Testing de componentes con servicios (mocks y spies).
+
 - Formularios reactivos (DD)
   - FormGroup, FormControl, FormBuilder
-  - Validaciones síncronas y asíncronas.
-  - Testing de formularios reactivos. -->
 
 <!--  ## Día 5 (V-10). Servicios HTTP
-
-  - Repositorio y lógica de negocio (estado). Estrategias
-  - Estrategia no optimista 1 repositorio / 2 estado
 - Formularios reactivos (review). Mensajes de validación
+  - Validaciones síncronas y asíncronas.
+  - Testing de formularios reactivos.
+
 - Introducción a los servicios HTTP en Angular.ç
 - Servicio fake basado en JSONServer.
   - Prueba con Postman
