@@ -10,11 +10,14 @@ export class CoursesLocalRepo implements Repo<Course, CourseDTO>  {
 
   storeName = 'Courses';
 
-  private courses: Course[] = localStorage.getItem(this.storeName)
+  private generateId() {
+    const currentIds = this.courses.map(c => c.id);
+    return currentIds.length ? Math.max(...currentIds as number[]) + 1 : 1;
+  }
+
+  private courses: Course[] = localStorage.getItem(this.storeName) && localStorage.getItem(this.storeName) !== '[]'
     ? JSON.parse(localStorage.getItem(this.storeName)!)
     : COURSES;
-
-    private nextId = 1;
 
   async getAll(): Promise<Course[]> {
     return [...this.courses];
@@ -27,7 +30,7 @@ export class CoursesLocalRepo implements Repo<Course, CourseDTO>  {
   }
 
   async add(data: CourseDTO): Promise<Course> {
-    const course: Course = { ...data, id: this.nextId++ };
+    const course: Course = { ...data, id: this.generateId() };
     this.courses.push(course);
     localStorage.setItem(this.storeName, JSON.stringify(this.courses));
     return { ...course };
