@@ -97,22 +97,22 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 
 - [Descanso]
 
-<!-- 
-
 - Arquitectura de componentes
-  - Componentes de presentación vs contenedores.
+  - Componentes de contenedores vs de presentación.
   - Componentes inteligentes vs tontos.
-- Ejemplo: ToDo List
-  - Entidad ToDo. Modelo y mock de datos.
-  - Componente Tasks. Lógica del estado
-  - Componente TodoItem. Input y Output (Eventos)
-  - Componente TodoCreate. Output (Eventos). Forms Template Driven (TD) 
-
--->
+- Ejemplo: Notes List
+  - Entidad Notes. Modelo y mock de datos asíncrono.
+  - Componente Notes-List. Lógica del estado
+  - Componente Notes-Item. Input y Output (Eventos)
+  - Componente Notes-Create. Output (Eventos)
+    - Forms Template Driven (TD)
+    - NgForm implícito, NgModel. Referencias locales
+    - viewChild(NgForm) y form.reset()
+    - viewChild(Form), ElementRef.nativeElement y acceso al DOM
 
 <!-- ## Día 4 (J-9). Servicios. Providers e injectors. Formularios DD
 
-- Forms TD (review)
+- Tests de Forms TD
 - Introducción a los servicios en Angular.
 - Servicios y Providers. DI (Dependency Injection)
   - Provider root v. provider en un componente
