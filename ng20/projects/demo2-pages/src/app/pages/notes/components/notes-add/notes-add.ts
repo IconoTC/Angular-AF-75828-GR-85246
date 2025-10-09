@@ -27,11 +27,11 @@ import { JsonPipe } from '@angular/common';
   }
   `
 })
-export class NotesForm {
+export class NotesAdd {
 
   eventAdd = output<NoteDTO>();
 
-  noteData: NoteDTO = {
+  protected noteData: NoteDTO = {
     title: '',
     author: '',
     isImportant: false,
