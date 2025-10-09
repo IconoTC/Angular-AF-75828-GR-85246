@@ -26,7 +26,7 @@ import { CoursesInMemoryRepo } from '../../service/courses-in-memory-repo';
     </div>
 
     @if (this.state.error()) {
-      <div style="color: red">Error: {{ this.state.error() }}</div>
+      <div class="error">Error: {{ this.state.error() }}</div>
     }
 
     <hr />
@@ -39,7 +39,10 @@ import { CoursesInMemoryRepo } from '../../service/courses-in-memory-repo';
       gap: 8px;
       padding: 4px;
     }
-  `,
+    .error {
+      color: red;
+    }
+    `,
 })
 export class CoursesList implements OnInit {
   state = {

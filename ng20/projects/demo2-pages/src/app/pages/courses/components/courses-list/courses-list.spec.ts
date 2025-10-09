@@ -8,7 +8,7 @@ import { CoursesForm } from '../courses-form/courses-form';
 import { CoursesInMemoryRepo } from '../../service/courses-in-memory-repo';
 import { COURSES } from '../../model/courses.data';
 
-fdescribe('CoursesList', () => {
+describe('CoursesList', () => {
   let component: CoursesList;
   let fixture: ComponentFixture<CoursesList>;
   let service: CoursesInMemoryRepo;
@@ -68,8 +68,8 @@ fdescribe('CoursesList', () => {
 
     (service.add as jasmine.Spy).and.resolveTo(newCourse);
 
-    // const element = fixture.nativeElement as HTMLElement;
-    fixture.detectChanges();
+    const element = fixture.nativeElement as HTMLElement;
+    // fixture.detectChanges();
 
     // Usar la implementacion
     // component.handleAdd(newCourse);
@@ -77,10 +77,29 @@ fdescribe('CoursesList', () => {
     const elementDebug = fixture.debugElement;
     const addFormDebug = elementDebug.query(By.directive(CoursesForm));
     addFormDebug.triggerEventHandler('eventAdd', courseData);
-    fixture.detectChanges();
+    await fixture.whenStable();
     expect(service.add).toHaveBeenCalledWith(courseData);
-    // expect(component.state.courses().length).toBe(3);
-    // expect(component.state.courses()[2]).toEqual(newCourse);
-    // expect(element.querySelectorAll('ind-courses-card').length).toBe(3);
+    expect(component.state.courses().length).toBe(3);
+    expect(component.state.courses()[2]).toEqual(newCourse);
+    expect(element.querySelectorAll('ind-courses-card').length).toBe(3);
+  });
+
+  it('should show an error message when service.add() fails', async () => {
+    const courseData: CourseDTO = {
+      title: 'Course 3',
+      author: 'Autor 3',
+      isCompleted: false,
+    };
+    (service.add as jasmine.Spy).and.rejectWith(new Error('Error adding course'));
+    const element = fixture.nativeElement as HTMLElement;
+    const elementDebug = fixture.debugElement;
+    const addFormDebug = elementDebug.query(By.directive(CoursesForm));
+    addFormDebug.triggerEventHandler('eventAdd', courseData);
+    await fixture.whenStable();
+    //fixture.detectChanges();
+    expect(service.add).toHaveBeenCalledWith(courseData);
+    expect(component.state.error()).toBe('Failed to add course.');
+    expect(element.querySelectorAll('ind-courses-card').length).toBe(2);
+    expect(element.querySelector('div.error')?.textContent).toContain('Failed to add course.');
   });
 });
