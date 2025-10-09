@@ -4,36 +4,44 @@ import { DateService } from './core/services/date-service';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home',
+  {
+    path: 'home',
     loadComponent: () => import('./pages/home/home-page'),
     title: 'Home | Demo2 Pages',
-    data: {label: 'Inicio'}
-   },
+    data: { label: 'Inicio' },
+  },
 
-  { path: 'notes',
+  {
+    path: 'notes',
     loadComponent: () => import('./pages/notes/notes-page'),
     title: 'Notes | Demo2 Pages',
-    data: {label: 'Notas'}
-   },
-  { path: 'tasks',
+    data: { label: 'Notas' },
+  },
+  {
+    path: 'courses',
+    loadComponent: () => import('./pages/courses/courses-page'),
+    title: 'Courses | Demo2 Pages',
+    data: { label: 'Cursos' },
+  },
+  {
+    path: 'tasks',
     loadComponent: () => import('./pages/tasks/tasks-page'),
     title: 'Tasks | Demo2 Pages',
-    data: {label: 'Tareas'},
-    providers: [DateService]
-   },
-  { path: 'about',
+    data: { label: 'Tareas' },
+    providers: [DateService],
+  },
+  {
+    path: 'about',
     loadComponent: () => import('./pages/about/about-page'),
     title: 'About | Demo2 Pages',
-    data: {label: 'Acerca de'}
-   },
+    data: { label: 'Acerca de' },
+  },
   { path: '**', redirectTo: 'home' },
 ];
 
-export const menuOptions: MenuOption[] =
-  routes
-    .filter( route => route.data?.['label'] )
-    .map( route => ({
-      label: route.data!['label'],
-      route: route.path as string
-    }));
-
+export const menuOptions: MenuOption[] = routes
+  .filter((route) => route.data?.['label'])
+  .map((route) => ({
+    label: route.data!['label'],
+    route: route.path as string,
+  }));

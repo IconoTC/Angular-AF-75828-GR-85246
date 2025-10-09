@@ -29,7 +29,7 @@ describe('NotesList', () => {
     const element = fixture.nativeElement as HTMLElement;
     //const notes = component.notes();
     fixture.whenStable().then(() => {
-      expect(element.querySelectorAll('ind-notes-card').length).toBe(2);
+      expect(element.querySelectorAll('ind-courses-card').length).toBe(2);
     });
   });
 
@@ -49,7 +49,7 @@ describe('NotesList', () => {
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(component.notes().length).toBe(3);
-      expect(element.querySelectorAll('ind-notes-card').length).toBe(3);
+      expect(element.querySelectorAll('ind-courses-card').length).toBe(3);
       expect(component.notes()[2].author).toEqual(newNote.author);
       expect(component.notes()[2].title).toEqual(newNote.title);
       expect(component.notes()[2].isImportant).toEqual(newNote.isImportant);
