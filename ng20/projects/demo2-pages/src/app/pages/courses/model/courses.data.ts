@@ -15,8 +15,4 @@ export const COURSES: Course[] = [
   },
 ];
 
-export const getCourses = (): Course[] => COURSES;
-
-export const getCoursesAsync = async (): Promise<Course[]> => COURSES
-
 
