@@ -117,7 +117,7 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 - Introducción a los servicios en Angular.
 - Servicios y Providers. DI (Dependency Injection)
 
-  - Provider root v. provider en un componente
+  - Provider root v. provider en un componente / ruta
   - Ejemplo con un servicio simple: DateService
   - Injector jerárquico. Servicios singleton y no singleton.
 
@@ -133,14 +133,17 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
 
   - Métodos CRUD. add(), update(), delete()
   - Uso de promesas
-  - Repositorio y lógica de negocio (estado).Estrategias
+  - Repositorio y lógica de negocio (estado). Estrategias
   - Repositorio y persistencia local (localStorage).
   - Testing de servicios.
     - Tests del servicio
+      - Test de métodos CRUD.
+      - Test de promesas (async, whenStable, expectAsync).
     - Testing de componentes con servicios (mocks y spies).
 
 - Formularios reactivos (DD)
   - FormGroup, FormControl, FormBuilder
+  - Binding desde el template
 
 <!--  ## Día 5 (V-10). Servicios HTTP
 - Formularios reactivos (review). Mensajes de validación
