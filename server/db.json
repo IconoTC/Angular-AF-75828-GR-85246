@@ -5,14 +5,14 @@
       "title": "Complete Angular project",
       "description": "Finish the Angular project by end of the week.",
       "author": "Pepe Pérez",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": "c2b7",
       "title": "Review pull requests",
       "description": "Check and review pending pull requests on GitHub.",
       "author": "Ana Gómez",
-      "isCompleted": true
+      "isCompleted": false
     },
     {
       "id": "3c4f",
@@ -20,6 +20,12 @@
       "description": "Update the project documentation with recent changes.",
       "author": "Luis Martínez",
       "isCompleted": true
+    },
+    {
+      "id": "ca59",
+      "title": "rereer",
+      "author": "rerere",
+      "isCompleted": false
     }
   ],
   "courses": [

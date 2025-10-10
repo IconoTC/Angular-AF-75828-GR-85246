@@ -1,5 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input  } from '@angular/core';
 import { Task } from '../../model/task';
+import { TasksStore } from '../../services/tasks-store';
 
 @Component({
   selector: 'ind-task-card',
@@ -27,15 +28,14 @@ import { Task } from '../../model/task';
 })
 export class TasksCard {
   task = input.required<Task>();
-  eventDelete = output<Task>();
-  eventChange = output<Task>();
+  state = inject(TasksStore);
 
   handleEventDelete() {
-    this.eventDelete.emit(this.task());
+    this.state.deleteTasks(this.task());
   }
 
   handleEventChange() {
     this.task().isCompleted = !this.task().isCompleted;
-    this.eventChange.emit(this.task());
+    this.state.updateTasks(this.task());
   }
 }

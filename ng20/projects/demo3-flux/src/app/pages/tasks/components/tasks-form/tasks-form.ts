@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, output, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnInit,  viewChild } from '@angular/core';
 import { TaskDTO } from '../../model/task';
 import { FormsModule, NgForm } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { TasksStore } from '../../services/tasks-store';
 
 @Component({
   selector: 'ind-tasks-form',
@@ -31,7 +32,7 @@ import { JsonPipe } from '@angular/common';
   `,
 })
 export class TasksForm implements OnInit {
-  eventAdd = output<TaskDTO>();
+  state = inject(TasksStore);
 
   // Usado en versiones anteriores
   // @ViewChild('taskForm', { static: true }) taskForm!: NgForm;
@@ -47,7 +48,9 @@ export class TasksForm implements OnInit {
 
   handleEventAdd(data: TaskDTO) {
     data.isCompleted = false;
-    this.eventAdd.emit(data);
+    this.state.addTasks(data);
+
+
     this.taskNgForm()!.resetForm();
 
     // Mala practica usar querySelector
