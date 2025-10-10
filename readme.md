@@ -166,11 +166,8 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Tests de servicios HTTP con HttpTestingController
   - Test de componentes con servicios HTTP (mocks y spies).
 
-<!--
 - Servicios stateful: patrón Flux
   - Estado con RxJS: Subjects
   - Clonado de ToDo como ToDo-Flux
   - Uso del estado desde los componentes ToDo...
   - Uso desde cualquier parte de la aplicación.
-  - Signals y estado
--->
