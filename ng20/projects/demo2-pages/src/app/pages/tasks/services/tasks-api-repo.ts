@@ -10,7 +10,7 @@ import { environment } from '../../../../environments/environment.development';
 })
 export class TasksApiRepo implements RepoRx<Task, TaskDTO> {
 
-  private readonly apiUrl = `${environment.apiUrl}/taskss`;
+  private readonly apiUrl = `${environment.apiUrl}/tasks`;
   http = inject(HttpClient);
 
 

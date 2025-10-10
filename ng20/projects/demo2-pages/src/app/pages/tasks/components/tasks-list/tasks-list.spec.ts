@@ -5,21 +5,23 @@ import { provideZonelessChangeDetection } from '@angular/core';
 import { Task, TaskDTO } from '../../model/task';
 import { By } from '@angular/platform-browser';
 import { TasksForm } from '../tasks-form/tasks-form';
-import { TasksInMemoryRepo } from '../../service/tasks-in-memory-repo';
 import { TASKS } from '../../model/tasks.data';
+import { TasksApiRepo } from '../../services/tasks-api-repo';
+import { of, throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('TasksList', () => {
   let component: TasksList;
   let fixture: ComponentFixture<TasksList>;
-  let service: TasksInMemoryRepo;
+  let service: TasksApiRepo;
 
-  const mockTasksInMemoryRepo: TasksInMemoryRepo = jasmine.createSpyObj(
-    'TasksInMemoryRepo',
+  const mockTasksInMemoryRepo: TasksApiRepo = jasmine.createSpyObj(
+    'TasksApyRepo',
     {
-      getAll: Promise.resolve([...TASKS]),
-      add: Promise.resolve(),
-      delete: Promise.resolve(),
-      change: Promise.resolve(),
+      getAll: of([...TASKS]),
+      add: of(),
+      delete: of(),
+      change: of(),
     },
     {
       data: [...TASKS],
@@ -31,13 +33,13 @@ describe('TasksList', () => {
       imports: [TasksList],
       providers: [
         provideZonelessChangeDetection(),
-        { provide: TasksInMemoryRepo, useValue: mockTasksInMemoryRepo },
+        { provide: TasksApiRepo, useValue: mockTasksInMemoryRepo },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TasksList);
     component = fixture.componentInstance;
-    service = TestBed.inject(TasksInMemoryRepo);
+    service = TestBed.inject(TasksApiRepo);
     fixture.whenStable();
     fixture.detectChanges();
   });
@@ -63,10 +65,10 @@ describe('TasksList', () => {
 
     const newTask: Task = {
       ...taskData,
-      id: 3,
+      id: '3',
     };
 
-    (service.add as jasmine.Spy).and.resolveTo(newTask);
+    (service.add as jasmine.Spy).and.returnValue(of(newTask));
 
     const element = fixture.nativeElement as HTMLElement;
     // fixture.detectChanges();
@@ -90,7 +92,8 @@ describe('TasksList', () => {
       author: 'Autor 3',
       isCompleted: false,
     };
-    (service.add as jasmine.Spy).and.rejectWith(new Error('Error adding task'));
+    (service.add as jasmine.Spy).and.returnValue(throwError(
+      () => new HttpErrorResponse({ error: 'Error adding task' })));
     const element = fixture.nativeElement as HTMLElement;
     const elementDebug = fixture.debugElement;
     const addFormDebug = elementDebug.query(By.directive(TasksForm));

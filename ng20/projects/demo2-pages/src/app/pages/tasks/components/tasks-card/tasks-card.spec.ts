@@ -8,7 +8,7 @@ describe('TaskCard', () => {
   let fixture: ComponentFixture<TasksCard>;
 
   const TaskMock: Task = {
-    id: 1,
+    id: '1',
     title: 'Test Task',
     author: 'Test Author',
     isCompleted: false,
