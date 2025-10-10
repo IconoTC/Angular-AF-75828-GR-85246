@@ -145,8 +145,10 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - FormGroup, FormControl, FormBuilder
   - Binding desde el template
 
-<!--  ## Día 5 (V-10). Servicios HTTP
+## Día 5 (V-10). Servicios HTTP
+
 - Formularios reactivos (review). Mensajes de validación
+
   - Validaciones síncronas y asíncronas.
   - Testing de formularios reactivos.
 
@@ -157,6 +159,14 @@ Repositorio: https://github.com/IconoTC/Angular-AF-75828-GR-85246
   - Creación de un ApiRepositoryService.
   - Configuración del servicio HTTP: provider
   - Uso desde la feature Tasks.
+
+- [Descanso]
+
+- Servicio HttpClientModule. Observables (RxJs).
+  - Tests de servicios HTTP con HttpTestingController
+  - Test de componentes con servicios HTTP (mocks y spies).
+
+<!--
 - Servicios stateful: patrón Flux
   - Estado con RxJS: Subjects
   - Clonado de ToDo como ToDo-Flux
