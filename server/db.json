@@ -19,7 +19,7 @@
       "title": "Update documentation",
       "description": "Update the project documentation with recent changes.",
       "author": "Luis Martínez",
-      "isCompleted": false
+      "isCompleted": true
     }
   ],
   "courses": [

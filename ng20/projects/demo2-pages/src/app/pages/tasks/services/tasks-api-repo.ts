@@ -3,14 +3,14 @@ import { RepoRx } from '../../../core/types/repo';
 import { Task, TaskDTO } from '../model/task';
 import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksApiRepo implements RepoRx<Task, TaskDTO> {
 
-  private readonly apiUrl = `${environment.apiUrl}/tasks`;
+  private readonly apiUrl = `${environment.apiUrl}/taskss`;
   http = inject(HttpClient);
 
 
