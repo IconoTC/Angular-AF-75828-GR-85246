@@ -1,0 +1,48 @@
+{
+  "tasks": [
+    {
+      "id": "1a3c",
+      "title": "Complete Angular project",
+      "description": "Finish the Angular project by end of the week.",
+      "author": "Pepe Pérez",
+      "isCompleted": false
+    },
+    {
+      "id": "c2b7",
+      "title": "Review pull requests",
+      "description": "Check and review pending pull requests on GitHub.",
+      "author": "Ana Gómez",
+      "isCompleted": true
+    },
+    {
+      "id": "3c4f",
+      "title": "Update documentation",
+      "description": "Update the project documentation with recent changes.",
+      "author": "Luis Martínez",
+      "isCompleted": false
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Angular",
+      "duration": "5 days",
+      "level": "Intermediate",
+      "description": "Learn the basics of Angular framework."
+    },
+    {
+      "id": "2",
+      "name": "React",
+      "duration": "4 days",
+      "level": "Beginner",
+      "description": "Introduction to React library."
+    },
+    {
+      "id": "3",
+      "name": "Vue.js",
+      "duration": "3 days",
+      "level": "Beginner",
+      "description": "Getting started with Vue.js."
+    }
+  ]
+}
