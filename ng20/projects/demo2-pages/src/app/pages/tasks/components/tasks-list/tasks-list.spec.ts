@@ -6,7 +6,7 @@ import { Task, TaskDTO } from '../../model/task';
 import { By } from '@angular/platform-browser';
 import { TasksForm } from '../tasks-form/tasks-form';
 import { TasksInMemoryRepo } from '../../service/tasks-in-memory-repo';
-import { COURSES } from '../../model/tasks.data';
+import { TASKS } from '../../model/tasks.data';
 
 describe('TasksList', () => {
   let component: TasksList;
@@ -16,13 +16,13 @@ describe('TasksList', () => {
   const mockTasksInMemoryRepo: TasksInMemoryRepo = jasmine.createSpyObj(
     'TasksInMemoryRepo',
     {
-      getAll: Promise.resolve([...COURSES]),
+      getAll: Promise.resolve([...TASKS]),
       add: Promise.resolve(),
       delete: Promise.resolve(),
       change: Promise.resolve(),
     },
     {
-      data: [...COURSES],
+      data: [...TASKS],
     },
   );
 

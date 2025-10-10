@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TaskCard } from '../taskss-card/task-card';
+import { TasksCard } from '../tasks-card/tasks-card';
 import { InputSignal, provideZonelessChangeDetection, signal } from '@angular/core';
 import { Task } from '../../model/task';
 
 describe('TaskCard', () => {
-  let component: TaskCard;
-  let fixture: ComponentFixture<TaskCard>;
+  let component: TasksCard;
+  let fixture: ComponentFixture<TasksCard>;
 
   const TaskMock: Task = {
     id: 1,
@@ -16,11 +16,11 @@ describe('TaskCard', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TaskCard],
+      imports: [TasksCard],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TaskCard);
+    fixture = TestBed.createComponent(TasksCard);
     component = fixture.componentInstance;
     component.task = signal(TaskMock) as unknown as InputSignal<Task>;
     fixture.detectChanges();

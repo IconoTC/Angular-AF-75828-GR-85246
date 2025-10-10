@@ -1,13 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { TasksForm } from '../tasks-form/tasks-form';
-import { TaskCard } from '../tasks-card/tasks-card';
+import { TasksCard } from '../tasks-card/tasks-card';
 import { Task, TaskDTO } from '../../model/task';
 import { JsonPipe } from '@angular/common';
 import { TasksInMemoryRepo } from '../../service/tasks-in-memory-repo';
 
 @Component({
   selector: 'ind-tasks-list',
-  imports: [JsonPipe, TasksForm, TaskCard],
+  imports: [JsonPipe, TasksForm, TasksCard],
   template: `
     <h3>Tasks List</h3>
 
@@ -17,7 +17,7 @@ import { TasksInMemoryRepo } from '../../service/tasks-in-memory-repo';
     </details>
     <div>
       @for (task of state.tasks(); track task.id) {
-        <ind-tasks-card
+        <ind-task-card
           [task]="clone(task)"
           (eventDelete)="handleDelete($event)"
           (eventChange)="handleChange($event)"

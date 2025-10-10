@@ -25,7 +25,7 @@ import { Task } from '../../model/task';
     }
   `,
 })
-export class TaskCard {
+export class TasksCard {
   task = input.required<Task>();
   eventDelete = output<Task>();
   eventChange = output<Task>();
